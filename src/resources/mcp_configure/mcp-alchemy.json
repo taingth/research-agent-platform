@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+      "my_sqlite_db": {
+        "command": "uvx",
+        "args": ["--from", "mcp-alchemy==2025.04.16.110003",
+                 "--refresh-package", "mcp-alchemy", "mcp-alchemy"],
+        "env": {
+          "DB_URL": "sqlite://////home/taint/CodeSpace/adk-samples/agents/agent_demo/db/chinook.db"
+        }
+      }
+    }
+  }
