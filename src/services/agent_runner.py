@@ -2,7 +2,7 @@
 
 from google.adk.artifacts.in_memory_artifact_service import InMemoryArtifactService
 from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
+from google.adk.sessions import DatabaseSessionService, InMemorySessionService
 from loguru import logger
 
 from ..resources.agents.main_agent import (
@@ -10,18 +10,22 @@ from ..resources.agents.main_agent import (
 )
 
 
-async def setup_session_service_and_runner():
+async def setup_session_service_and_runner(app_name: str, session_id: str, user_id: str):
     main_agent, exit_stack = await get_main_agent_async()
     # --- Session Management ---
     # Key Concept: SessionService stores conversation history & state.
     # InMemorySessionService is simple, non-persistent storage for this tutorial.
+    # session_service = DatabaseSessionService(
+    #     db_url="sqlite:////home/taint/CodeSpace/adk-samples/agents/agent_demo/db/Chat_history.db",  # SQLite for simplicity
+    # )
+    
     session_service = InMemorySessionService()
     artifacts_service = InMemoryArtifactService()
 
     # Define constants for identifying the interaction context
-    APP_NAME = "test"
-    USER_ID = "user_1_agent_team"
-    SESSION_ID = "session_001_agent_team"  # Using a fixed ID for simplicity
+    APP_NAME = app_name
+    USER_ID = user_id
+    SESSION_ID = session_id
 
     # Create the specific session where the conversation will happen
     session = session_service.create_session(

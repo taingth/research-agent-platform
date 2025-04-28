@@ -5,7 +5,7 @@ from google.adk.models.lite_llm import LiteLlm
 class LocalModelFactory:
     """Factory for creating local models."""
 
-    def __init__(self, model_name: str = "hosted_vllm/Qwen/Qwen2.5-7B-Instruct"):
+    def __init__(self, model_name: str = "hosted_vllm/Qwen/QwQ-32B-AWQ"):
         self.model_name = model_name
 
     def create_model(self) -> LiteLlm:

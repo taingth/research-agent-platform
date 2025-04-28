@@ -1,1 +1,0 @@
-uv run python -m vllm.entrypoints.openai.api_server --model Qwen/QwQ-32B-AWQ --enable-reasoning --reasoning-parser deepseek_r1 --enable-auto-tool-choice --tool-call-parser hermes --tensor-parallel-size 2 --max-model-len 8000 --gpu-memory-utilization 0.9 --enforce-eager --port 3001
