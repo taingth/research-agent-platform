@@ -1,7 +1,7 @@
 from google.adk.agents import Agent
 
-from ...model_serving.models import LocalModelFactory
-from ..mcp_server.mcp_alchemy import get_sqlite_alchemy_client
+from ....model_serving.models import LocalModelFactory
+from ...mcp_server.mcp_alchemy import get_sqlite_alchemy_client
 
 
 model = LocalModelFactory().create_model()

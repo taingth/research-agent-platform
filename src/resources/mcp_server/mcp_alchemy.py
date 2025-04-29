@@ -18,5 +18,16 @@ async def get_sqlite_alchemy_client():
                 "DB_URL": "sqlite://////home/taint/CodeSpace/adk-samples/agents/agent_demo/db/chinook.db"
             },
         )
+        # connection_params=StdioServerParameters(
+        #     command="uv",
+        #     args=[
+        #         "--directory",
+        #         "/home/taint/CodeSpace/adk-samples/agents/servers/src/sqlite",
+        #         "run",
+        #         "mcp-server-sqlite",
+        #         "--db-path",
+        #         "home/taint/CodeSpace/adk-samples/agents/agent_demo/db/chinook.db",
+        #     ],
+        # )
     )
     return tools, exit_stack

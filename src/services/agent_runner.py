@@ -5,7 +5,7 @@ from google.adk.runners import Runner
 from google.adk.sessions import DatabaseSessionService, InMemorySessionService
 from loguru import logger
 
-from ..resources.agents.main_agent import (
+from ..resources.agents.root_agent.main_agent import (
     get_main_agent_async,  # Assuming this is a tool that fetches weather data
 )
 
